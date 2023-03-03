@@ -15,11 +15,11 @@ public class InputController {
 		return "input";
 	}
 	//model.addAttributeを使ってpreviousをModelに登録
-	@PostMapping("/input/{previous}")
+	@GetMapping("/input/{previous}/")
 	public String getOutput(@RequestParam("previous")String previous,Model model) {
 		//フォームから送信されてきた値をModelに登録
 		model.addAttribute("previous", previous);
-		// confirm.htmlに画面遷移
+		// index.htmlに画面遷移
 		return "input";
 	}
 }
