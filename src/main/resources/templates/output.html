@@ -8,10 +8,7 @@
 	<h1 th:text="#{content.title}">Thymeleaf課題</h1>
 	<h2 th:text="#{content.message}"></h2>
 	<p>値を入力してください。</p>
-	<p th:if="${not #strings.isEmpty(previous)}" th:text="'previous(' + ${previous} + ') 前回入力された値は previous(' + ${previous} + ') でした'"></p>
-	<form method="post" action="/output/">
-		<input type="text" name="previous">
-		<button type="submit">送信</button>
-	</form>
+	<p th:text="'入力された値は「' + ${previous} + '」です。'"></p>
+	<p><a th:href="@{/input/(previous=${previous})}">入力画面へ戻る</a></p>
 </body>
 </html>
