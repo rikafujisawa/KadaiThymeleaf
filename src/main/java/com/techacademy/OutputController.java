@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class OutputController {
 
 	@PostMapping("/output")
-	public String postOutput(@RequestParam("previous") String previous, Model model) {
+	public String postOutput(@RequestParam("previous") String val, Model model) {
 		// フォームから送信されてきた値をModelに登録
-		model.addAttribute("previous", previous);
-		// output.htmlに画面遷移
+		model.addAttribute("val", val);
+		//output.htmlに画面遷移
 		return "output";
 	}
 }
